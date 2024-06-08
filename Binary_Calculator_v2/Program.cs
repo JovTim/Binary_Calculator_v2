@@ -33,9 +33,9 @@ namespace Binary_Calculator_v2
             */
             binary_decimal binary_Decimal = new binary_decimal();
 
-            //Console.WriteLine(binary_Decimal.decimal_to_binary("75.10"));
+            Console.WriteLine(binary_Decimal.decimal_to_binary("75"));
 
-            Console.WriteLine(binary_Decimal.binary_to_decimal("1001011.00011001100"));
+            //Console.WriteLine(binary_Decimal.binary_to_decimal("1011"));
             
         }
     }

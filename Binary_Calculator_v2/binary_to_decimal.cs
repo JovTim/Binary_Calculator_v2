@@ -61,9 +61,14 @@ namespace binary_and_decimal
                 remainder += x.ToString();
             }
 
+            if (fraction == 0) // checking to include fraction or not
+            {
+                return remainder;
+            }
+
             var fraction_container = new List<decimal>() { };
 
-            for (int i = 0; i <= 12; i++) // buggy sa part na toh
+            for (int i = 0; i <= 12; i++)
             {
                 decimal number = (decimal)fraction * 2;
                 string word = Convert.ToString(number);
