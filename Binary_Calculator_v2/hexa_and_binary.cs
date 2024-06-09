@@ -49,6 +49,20 @@ namespace Binary_Calculator_v2
                 char convert = splitter.hexa_replacer((int)y);
                 hexadecimalWhole = convert.ToString() + hexadecimalWhole;
             }
+            
+            //-----Fraction----
+            var binaryFractionContainer = new List<string>() { };
+            binaryTemp = "";
+
+            foreach(var i in binaryFraction)
+            {
+                if (binaryTemp.Length == 4)
+                {
+                    binaryFractionContainer.Add(binaryTemp);
+                    binaryTemp = "";
+                }
+                binaryTemp += i;
+            }
 
             return hexadecimalWhole; // not final yet :)
         }
