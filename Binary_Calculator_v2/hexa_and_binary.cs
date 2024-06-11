@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using program_splitter;
 using binary_and_decimal;
-
+// Have not added if whole or fraction only. Might add later <11-06-24>
 namespace binary_hexa
 {
     internal class hexa_and_binary
