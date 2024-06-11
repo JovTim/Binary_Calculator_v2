@@ -91,7 +91,7 @@ namespace binary_hexa
         public string hexa_to_binary(string value)
         {
             var (whole, fraction) = splitter.hexa_splitter(value);
-            var binaryWholeContainer = new List<string>() { };
+            string binaryWholeContainer = "";
 
             for (int i = 0; i <= whole.Count - 1; i++)
             {
@@ -104,16 +104,28 @@ namespace binary_hexa
                     number /= 2;
                 }
 
-                binaryWholeContainer.Add(wholeTemp);
+                binaryWholeContainer = wholeTemp + binaryWholeContainer;
             }
 
-            string wholeBinary = "";
-            foreach (var binary in binaryWholeContainer)
+
+            string binaryFractionContainer = ".";
+
+            for (int i = 0; i <= fraction.Count - 1; i++)
             {
-                wholeBinary += binary;
-            }
+                int number = Convert.ToInt32(fraction[i]);
+                string fractionTemp = "";
+                for (int j = 0; j < 4; j++)
+                {
+                    decimal binary = Convert.ToDecimal(number) % 2;
+                    fractionTemp = binary.ToString() + fractionTemp;
+                    number /= 2;
+                }
 
-            return wholeBinary; // not yet final output
+                binaryFractionContainer += fractionTemp;
+            }
+            
+            return binaryWholeContainer + binaryFractionContainer;
+
 
         }
     }

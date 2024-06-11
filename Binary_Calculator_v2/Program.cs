@@ -38,7 +38,7 @@ namespace Binary_Calculator_v2
 
             //Console.WriteLine(binary_Decimal.decimal_to_binary("75"));
             //Console.WriteLine(hexa_And_Binary.binary_to_hexa("01111010111.101"));
-            Console.WriteLine(hexa_And_Binary.hexa_to_binary("1C.4"));
+            Console.WriteLine(hexa_And_Binary.hexa_to_binary("1C.4A"));
             //Console.WriteLine(binary_Decimal.binary_to_decimal("1011"));
             
         }
