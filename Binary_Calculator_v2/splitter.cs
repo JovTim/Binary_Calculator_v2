@@ -87,25 +87,30 @@ namespace program_splitter
             var fraction_container = new List<string>() { };
             var hexa = new List<string>(value.Split('.'));
                 
-            for (int i = 0; i <= hexa[0].Count(); i++)
+            for (int i = 0; i <= hexa[0].Length - 1; i++)
             {
                if (hexadecimal.ContainsKey(hexa[0][i].ToString()))
                 {
                     whole_container.Add(hexadecimal[hexa[0][i].ToString()].ToString());
                 }
-                
-                    whole_container.Add(value.ToString());
+                else 
+                {
+                    whole_container.Add(hexa[0][i].ToString());
+                }
                     
             }
 
-            for (int i = 0; i <= hexa[1].Count(); i++) 
+            for (int i = 0; i <= hexa[1].Length - 1; i++) 
             { 
                 if (hexadecimal.ContainsKey(hexa[1][i].ToString())) 
                 {
                     fraction_container.Add(hexadecimal[hexa[1][i].ToString()].ToString());
                 }
-                    fraction_container.Add(value.ToString());
+                else
+                {
+                    fraction_container.Add(hexa[1][i].ToString());
                 }
+            }
 
                 return (whole_container, fraction_container);   
 
