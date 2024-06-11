@@ -87,5 +87,10 @@ namespace binary_hexa
             return hexadecimalWhole + hexadecimalFraction;
 
         }
+
+        public string hexa_to_binary(string value)
+        {
+            var (whole, fraction) = splitter.hexa_splitter(value);
+        }
     }
 }

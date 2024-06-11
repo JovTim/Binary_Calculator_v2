@@ -72,5 +72,44 @@ namespace program_splitter
             }
         }
 
+        public (List<string>, List<string>) hexa_splitter(string value)
+        {
+            Dictionary<string, decimal> hexadecimal = new Dictionary<string, decimal>
+            {
+                {"A", 10 },
+                {"B", 11 },
+                {"C", 12 },
+                {"D", 13 },
+                {"E", 14 },
+                {"F", 15 }
+            };
+            var whole_container = new List<string>() { };
+            var fraction_container = new List<string>() { };
+            var hexa = new List<string>(value.Split('.'));
+                
+            for (int i = 0; i <= hexa[0].Count(); i++)
+            {
+               if (hexadecimal.ContainsKey(hexa[0][i].ToString()))
+                {
+                    whole_container.Add(hexadecimal[hexa[0][i].ToString()].ToString());
+                }
+                
+                    whole_container.Add(value.ToString());
+                    
+            }
+
+            for (int i = 0; i <= hexa[1].Count(); i++) 
+            { 
+                if (hexadecimal.ContainsKey(hexa[1][i].ToString())) 
+                {
+                    fraction_container.Add(hexadecimal[hexa[1][i].ToString()].ToString());
+                }
+                    fraction_container.Add(value.ToString());
+                }
+
+                return (whole_container, fraction_container);   
+
+        }
+
     }
 }
