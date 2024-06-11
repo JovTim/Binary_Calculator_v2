@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using program_splitter;
 using binary_and_decimal;
 
-namespace Binary_Calculator_v2
+namespace binary_hexa
 {
     internal class hexa_and_binary
     {
@@ -43,18 +43,17 @@ namespace Binary_Calculator_v2
             }
 
             string hexadecimalWhole = "";
-            foreach (var i in binaryWholeContainer)
+            foreach (string i in binaryWholeContainer)
             {
                 double y = binary_decimal.binary_to_decimal(i);
-                char convert = splitter.hexa_replacer((int)y);
-                hexadecimalWhole = convert.ToString() + hexadecimalWhole;
+                string convert = splitter.hexa_replacer((decimal)y);
+                hexadecimalWhole = convert + hexadecimalWhole;
             }
-            
             //-----Fraction----
             var binaryFractionContainer = new List<string>() { };
             binaryTemp = "";
 
-            foreach(var i in binaryFraction)
+            foreach (var i in binaryFraction)
             {
                 if (binaryTemp.Length == 4)
                 {
@@ -64,7 +63,29 @@ namespace Binary_Calculator_v2
                 binaryTemp += i;
             }
 
-            return hexadecimalWhole; // not final yet :)
+            if (String.IsNullOrEmpty(binaryTemp) != true)
+            {
+                for (int i = 0; i <= 4; i++)
+                {
+                    if (binaryTemp.Length == 4)
+                    {
+                        binaryFractionContainer.Add(binaryTemp);
+                        break;
+                    }
+                    binaryTemp += "0";
+                }
+            }
+
+            string hexadecimalFraction = ".";
+            foreach (var i in binaryFractionContainer)
+            {
+                double x = binary_decimal.binary_to_decimal(i);
+                string convetx = splitter.hexa_replacer((decimal)x);
+                hexadecimalFraction += convetx.ToString();
+            }
+
+            return hexadecimalWhole + hexadecimalFraction;
+
         }
     }
 }

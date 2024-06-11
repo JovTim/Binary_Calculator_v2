@@ -50,16 +50,16 @@ namespace program_splitter
             }
         }
 
-        public char hexa_replacer(int value)
+        public string hexa_replacer(decimal value)
         {
-            Dictionary<int, char> hexadecimal = new Dictionary<int, char> 
+            Dictionary<decimal, string> hexadecimal = new Dictionary<decimal, string> 
             {
-                {10, 'A' },
-                {11, 'B' },
-                {12, 'C' },
-                {13, 'D' },
-                {14, 'E' },
-                {15, 'F' }
+                {10, "A" },
+                {11, "B" },
+                {12, "C" },
+                {13, "D" },
+                {14, "E" },
+                {15, "F" }
             };
 
             if (hexadecimal.ContainsKey(value))
@@ -68,7 +68,7 @@ namespace program_splitter
             }
             else
             {
-                return (char)value;
+                return value.ToString();
             }
         }
 
