@@ -23,7 +23,7 @@ namespace Binary_Calculator_v2
             //Console.WriteLine(hexa_And_Binary.binary_to_hexa("01111010111.101"));
             //Console.WriteLine(hexa_And_Binary.hexa_to_binary("1C.4A"));
             //Console.WriteLine(binary_Decimal.binary_to_decimal("1011"));
-            Console.WriteLine(octal_And_Binary.binary_to_octal("01110111.1101"));
+            Console.WriteLine(octal_And_Binary.octal_to_binary("715.34"));
             
         }
     }

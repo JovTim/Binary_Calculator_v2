@@ -89,5 +89,43 @@ namespace binary_octal
 
             return octalWhole + octalFraction;
         }
+
+        public string octal_to_binary(string value)
+        {
+            var (whole, fraction) = splitter.bin_splitter(value);
+            string binaryWholeContainer = "";
+
+            for (int i = 0; i <= whole.Length - 1; i++)
+            {
+                int number = Convert.ToInt32(whole[i]);
+                string wholeTemp = "";
+                for(int j = 0; j < 3; j++)
+                {
+                    decimal binary = Convert.ToDecimal(number) % 2;
+                    wholeTemp = binary.ToString() + wholeTemp;
+                    number /= 2;
+                }
+
+                binaryWholeContainer += wholeTemp;
+            }
+
+            string binaryFractionContainer = ".";
+
+            for (int i = 0; i <= fraction.Length - 1; i++)
+            {
+                int number = Convert.ToInt32(fraction[i]);
+                string fractionTemp = "";
+                for (int j = 0; j < 3; j++)
+                {
+                    decimal binary = Convert.ToDecimal(number) % 2;
+                    fractionTemp = binary.ToString() + fractionTemp;
+                    number /= 2;
+                }
+
+                binaryFractionContainer += fractionTemp;
+            }
+
+            return binaryWholeContainer + binaryFractionContainer;
+        }
     }
 }
