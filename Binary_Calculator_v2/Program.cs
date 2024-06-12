@@ -7,6 +7,7 @@ using binary_and_decimal;
 using binary_hexa;
 using binary_octal;
 using twos_complement_file;
+using binOctalHexa;
 
 namespace Binary_Calculator_v2
 {
@@ -19,6 +20,7 @@ namespace Binary_Calculator_v2
             hexa_and_binary hexa_And_Binary = new hexa_and_binary();
             octal_and_binary octal_And_Binary = new octal_and_binary();
             twos_complement twos_Complement = new twos_complement();
+            bin_octal_hexa bin_Octal_Hexa = new bin_octal_hexa();
 
 
             //Console.WriteLine(binary_Decimal.decimal_to_binary("75"));
@@ -26,6 +28,8 @@ namespace Binary_Calculator_v2
             //Console.WriteLine(hexa_And_Binary.hexa_to_binary("1C.4A"));
             //Console.WriteLine(binary_Decimal.binary_to_decimal("1011"));
             //  Console.WriteLine(octal_And_Binary.octal_to_binary("715.34"));
+
+            Console.WriteLine(bin_Octal_Hexa.octalhex_to_Bin("BEEF.5A", 4));
 
             // Console.WriteLine(twos_Complement.twosComplement("0110.11"));
             

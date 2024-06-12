@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="binary_to_decimal.cs" />
+    <Compile Include="bin_octal_hexa.cs" />
     <Compile Include="hexa_and_binary.cs" />
     <Compile Include="octal_and_binary.cs" />
     <Compile Include="Program.cs" />
