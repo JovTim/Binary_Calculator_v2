@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 using program_splitter;
 using binary_and_decimal;
 
+// this file is temporary
+// both octal and hexa have the same code structure, but different length octal(000), hexa(0000)
+// will make a way to merge both octal and hexa conversion into one code file
 namespace binary_octal
 {
     internal class octal_and_binary
