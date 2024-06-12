@@ -27,7 +27,7 @@ namespace Binary_Calculator_v2
             //Console.WriteLine(binary_Decimal.binary_to_decimal("1011"));
             //  Console.WriteLine(octal_And_Binary.octal_to_binary("715.34"));
 
-            Console.WriteLine(twos_Complement.twosComplement("0111011.011"));
+            Console.WriteLine(twos_Complement.twosComplement("0110.11"));
             
         }
     }

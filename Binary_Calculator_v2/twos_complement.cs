@@ -70,9 +70,9 @@ namespace twos_complement_file
                 twos = '1' + twos;
             }
 
-            string lastBinary = twos.Insert(count, ".");
+            string twosComplementBinary = twos.Insert(count, ".");
 
-            return lastBinary;
+            return twosComplementBinary;
         }
 
     }
