@@ -17,8 +17,6 @@ namespace Binary_Calculator_v2
         static void Main(string[] args)
         {
             binary_decimal binary_Decimal = new binary_decimal();
-            hexa_and_binary hexa_And_Binary = new hexa_and_binary();
-            octal_and_binary octal_And_Binary = new octal_and_binary();
             twos_complement twos_Complement = new twos_complement();
             bin_octal_hexa bin_Octal_Hexa = new bin_octal_hexa();
 
