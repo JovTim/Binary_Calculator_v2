@@ -8,7 +8,6 @@ using binary_and_decimal;
 // merged both octal and hexadecimal code structure
 // when binary to octal or hexa, the range(3-octal | 4-hexa) and sign(0-positive | 1-negative) should be specified
 // when octal or hexa to binary, only the range should be specified
-// might delete the other files later <06-12-24>
 
 namespace binOctalHexa
 {
