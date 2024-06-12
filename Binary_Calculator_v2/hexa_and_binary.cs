@@ -104,7 +104,7 @@ namespace binary_hexa
                     number /= 2;
                 }
 
-                binaryWholeContainer = wholeTemp + binaryWholeContainer;
+                binaryWholeContainer += wholeTemp;
             }
 
 
