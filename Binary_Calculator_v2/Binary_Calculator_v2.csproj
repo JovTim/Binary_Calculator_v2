@@ -43,10 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="binary_to_decimal.cs" />
+    <Compile Include="binary_decimal.cs" />
     <Compile Include="bin_octal_hexa.cs" />
-    <Compile Include="hexa_and_binary.cs" />
-    <Compile Include="octal_and_binary.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="splitter.cs" />

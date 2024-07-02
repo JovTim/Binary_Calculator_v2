@@ -4,8 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using binary_and_decimal;
-using binary_hexa;
-using binary_octal;
 using twos_complement_file;
 using binOctalHexa;
 
