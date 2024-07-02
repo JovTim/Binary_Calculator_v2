@@ -4,11 +4,14 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
-
+using binary_and_decimal;
+using twos_complement_file;
 namespace program_splitter
 {
     internal class splitter
     {
+        binary_decimal binary_Decimal = new binary_decimal();
+        twos_complement twos_Complement = new twos_complement();
         public (string, string) bin_splitter(string value)
         {
             if (value.Contains(".")) {
@@ -114,6 +117,49 @@ namespace program_splitter
 
                 return (whole_container, fraction_container);   
 
+        }
+
+        public string binPerform(string value)
+        {
+            if (value[0] == '1')
+            {
+                double x = binary_Decimal.binary_to_decimal(twos_Complement.twosComplement(value));
+                double z = 0 - x;
+                return z.ToString();
+            }
+            return binary_Decimal.binary_to_decimal(value).ToString();
+        }
+
+        private string binDivisibleChecker(string value, string sign)
+        {
+            string binary = value;
+
+            while (binary.Length % 4 != 0)
+            {
+                binary = sign + binary;
+            }
+            return binary;
+        }
+
+        public string binCalFixer(string value)
+        {
+            if (value[0] == '-')
+            {
+                string deci = "";
+                foreach (var i in value)
+                {
+                    if (i == '-')
+                    {
+                        continue;
+                    }
+                    deci += i.ToString();
+
+                }
+                string x = binary_Decimal.decimal_to_binary(deci);
+                string final = twos_Complement.twosComplement(x);
+                return binDivisibleChecker(final, "1");
+            }
+            return binary_Decimal.decimal_to_binary(binDivisibleChecker(value, "0"));
         }
 
     }
