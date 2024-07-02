@@ -3,14 +3,53 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using program_splitter;
 
 namespace binary_calculation
 {
     internal class calculation
     {
-        public string binCalculation(string bin1, string bin2, string operation)
+        
+        splitter splitter = new splitter();
+        public string binAddition(string bin1, string bin2)
         {
-            return bin1 + bin2;
+            string value1 = splitter.binPerform(bin1);
+            string value2 = splitter.binPerform(bin2);
+
+            double calculate = (Convert.ToDouble(value1) +  Convert.ToDouble(value2));
+
+            return splitter.binCalFixer(calculate.ToString());
         }
+
+        public string binSubtraction(string bin1, string bin2)
+        {
+            string value1 = splitter.binPerform(bin1);
+            string value2 = splitter.binPerform(bin2);
+
+            double calculate = (Convert.ToDouble(value1) - Convert.ToDouble(value2));
+
+            return splitter.binCalFixer(calculate.ToString());
+        }
+
+        public string binMultiplication(string bin1, string bin2)
+        {
+            string value1 = splitter.binPerform(bin1);
+            string value2 = splitter.binPerform(bin2);
+
+            double calculate = (Convert.ToDouble(value1) * Convert.ToDouble(value2));
+
+            return splitter.binCalFixer(calculate.ToString());
+        }
+
+        public string binDivision(string  bin1, string bin2)
+        {
+            string value1 = splitter.binPerform(bin1);
+            string value2 = splitter.binPerform(bin2);
+
+            double calculate = (Convert.ToDouble(value1)  / Convert.ToDouble(value2));
+
+            return splitter.binCalFixer(calculate.ToString());
+        }
+        
     }
 }

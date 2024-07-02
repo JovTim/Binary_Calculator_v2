@@ -10,8 +10,6 @@ namespace program_splitter
 {
     internal class splitter
     {
-        binary_decimal binary_Decimal = new binary_decimal();
-        twos_complement twos_Complement = new twos_complement();
         public (string, string) bin_splitter(string value)
         {
             if (value.Contains(".")) {
@@ -118,9 +116,11 @@ namespace program_splitter
                 return (whole_container, fraction_container);   
 
         }
-
+        
         public string binPerform(string value)
         {
+            binary_decimal binary_Decimal = new binary_decimal();
+            twos_complement twos_Complement = new twos_complement();
             if (value[0] == '1')
             {
                 double x = binary_Decimal.binary_to_decimal(twos_Complement.twosComplement(value));
@@ -132,17 +132,21 @@ namespace program_splitter
 
         private string binDivisibleChecker(string value, string sign)
         {
-            string binary = value;
+            var val = new List<string>(value.Split('.'));
+            string binary = val[0];
 
             while (binary.Length % 4 != 0)
             {
                 binary = sign + binary;
             }
-            return binary;
+            return binary + "." + val[1];
         }
+        
 
         public string binCalFixer(string value)
         {
+        binary_decimal binary_Decimal = new binary_decimal();
+        twos_complement twos_Complement = new twos_complement();
             if (value[0] == '-')
             {
                 string deci = "";
@@ -159,8 +163,10 @@ namespace program_splitter
                 string final = twos_Complement.twosComplement(x);
                 return binDivisibleChecker(final, "1");
             }
-            return binary_Decimal.decimal_to_binary(binDivisibleChecker(value, "0"));
+            return binDivisibleChecker(binary_Decimal.decimal_to_binary(value), "0");
+            //return binary_Decimal.decimal_to_binary(binDivisibleChecker(value, "0"));
         }
+        
 
     }
 }

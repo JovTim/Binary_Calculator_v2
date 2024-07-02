@@ -68,7 +68,7 @@ namespace binary_and_decimal
 
             var fraction_container = new List<decimal>() { };
 
-            for (int i = 0; i <= 12; i++)
+            for (int i = 0; i <= 8; i++)
             {
                 decimal number = (decimal)fraction * 2;
                 string word = Convert.ToString(number);
