@@ -46,7 +46,7 @@ namespace binary_calculation
             string value1 = splitter.binPerform(bin1);
             string value2 = splitter.binPerform(bin2);
 
-            double calculate = (Convert.ToDouble(value1)  / Convert.ToDouble(value2));
+            double calculate = (Convert.ToDouble(value1) / Convert.ToDouble(value2));
 
             return splitter.binCalFixer(calculate.ToString());
         }

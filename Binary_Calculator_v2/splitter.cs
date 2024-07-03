@@ -130,7 +130,7 @@ namespace program_splitter
             return binary_Decimal.binary_to_decimal(value).ToString();
         }
 
-        private string binDivisibleChecker(string value, string sign)
+        public string binDivisibleChecker(string value, string sign)
         {
             var val = new List<string>(value.Split('.'));
             string binary = val[0];
