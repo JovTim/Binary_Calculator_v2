@@ -96,8 +96,16 @@ namespace Checker
 
         }
 
-        private string binarySignedChecker(string value)
+        private string binarySignedChecker(string value, bool sign)
         {
+            if (sign)
+            {
+                if (value[0].Equals('0'))
+                {
+                    return "1111" + value;
+                }
+                return value;
+            }
             if (value[0].Equals('1'))
             {
                 return "0000" + value;
@@ -147,10 +155,10 @@ namespace Checker
             {
                 var positiveDecimal = 0 - (Convert.ToDecimal(value));
                 var convertToBinary = binary_Decimal.decimal_to_binary(positiveDecimal.ToString());
-                return splitter.binDivisibleChecker(twos_Complement.twosComplement(convertToBinary).ToString(), "1");
+                return binarySignedChecker(splitter.binDivisibleChecker(twos_Complement.twosComplement(convertToBinary).ToString(), "1"), true);
             }
 
-            return binarySignedChecker(splitter.binDivisibleChecker(binary_Decimal.decimal_to_binary(value), "0"));
+            return binarySignedChecker(splitter.binDivisibleChecker(binary_Decimal.decimal_to_binary(value), "0"), false);
         }
 
         public string binaryOctalChecker(string value)
@@ -195,7 +203,7 @@ namespace Checker
                 return hexaSignedChecker(hexa);
             }
 
-            var uHexa = binOctHex.binary_to_OctalHexa(value, 3, "0");
+            var uHexa = binOctHex.binary_to_OctalHexa(value, 4, "0");
             return uHexa;
         }
         public string hexaBinaryChecker(string value)

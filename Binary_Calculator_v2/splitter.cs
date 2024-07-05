@@ -101,6 +101,11 @@ namespace program_splitter
                     
             }
 
+            if (hexa.Count == 1)
+            {
+                return (whole_container, fraction_container);
+            }
+
             for (int i = 0; i <= hexa[1].Length - 1; i++) 
             { 
                 if (hexadecimal.ContainsKey(hexa[1][i].ToString())) 
@@ -173,7 +178,6 @@ namespace program_splitter
                 return binDivisibleChecker(final, "1");
             }
             return binDivisibleChecker(binary_Decimal.decimal_to_binary(value), "0");
-            //return binary_Decimal.decimal_to_binary(binDivisibleChecker(value, "0"));
         }
         
 

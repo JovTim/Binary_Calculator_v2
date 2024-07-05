@@ -52,6 +52,11 @@ namespace binOctalHexa
                 string convert = splitter.hexa_replacer((decimal)y);
                 octalHexWhole = convert + octalHexWhole;
             }
+
+            if (String.IsNullOrEmpty(binaryFraction))
+            {
+                return octalHexWhole;
+            }
             //-----Fraction----
             var binaryFractionContainer = new List<string>() { };
             binaryTemp = "";
@@ -110,6 +115,10 @@ namespace binOctalHexa
                 binaryWholeContainer += wholeTemp;
             }
 
+            if (fraction.Any() != true)
+            {
+                return binaryWholeContainer;
+            }
 
             string binaryFractionContainer = ".";
 
