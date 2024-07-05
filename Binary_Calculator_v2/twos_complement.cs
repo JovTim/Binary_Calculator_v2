@@ -36,9 +36,9 @@ namespace twos_complement_file
             return (c == '0') ? '1' : '0';
         }
 
-        public string twosComplement(string value)
+        public string twosComplement(string value) // only focus on fraction
         {
-            var (count, binary) = pointCounter(value);
+            var (counter, binary) = pointCounter(value);
             String ones = "", twos = "";
             ones = twos = "";
 
@@ -70,9 +70,13 @@ namespace twos_complement_file
                 twos = '1' + twos;
             }
 
-            string twosComplementBinary = twos.Insert(count, ".");
+            if (counter > 0)
+            {
+                string pointTwosCompelementBinary = twos.Insert(counter, ".");
+                return pointTwosCompelementBinary;
+            }
 
-            return twosComplementBinary;
+            return twos;
         }
 
     }

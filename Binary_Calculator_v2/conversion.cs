@@ -95,6 +95,34 @@ namespace Checker
             return true;
 
         }
+
+        private string binarySignedChecker(string value)
+        {
+            if (value[0].Equals('1'))
+            {
+                return "0000" + value;
+            }
+            return value;
+        }
+
+        private string hexaSignedChecker(string value)
+        {
+            if (value[0].Equals('F') != true)
+            {
+                return "F" + value;
+            }
+            return value;
+        }
+
+        private string octalSignedChecker(string value)
+        {
+            if (value[0].Equals('7') != true)
+            {
+                return "7" + value;
+            }
+            return value;
+        }
+
         public string binaryDecimalChecker(string value)
         {
             if (binaryValueChecker(value) != true)
@@ -122,7 +150,7 @@ namespace Checker
                 return splitter.binDivisibleChecker(twos_Complement.twosComplement(convertToBinary).ToString(), "1");
             }
 
-            return splitter.binDivisibleChecker(binary_Decimal.decimal_to_binary(value), "0");
+            return binarySignedChecker(splitter.binDivisibleChecker(binary_Decimal.decimal_to_binary(value), "0"));
         }
 
         public string binaryOctalChecker(string value)
@@ -136,7 +164,7 @@ namespace Checker
             {
                 var binary = splitter.binDivisibleChecker(value, "1");
                 var octal = binOctHex.binary_to_OctalHexa(binary, 3, "1");
-                return octal;
+                return octalSignedChecker(octal);
             }
 
             var uOctal = binOctHex.binary_to_OctalHexa(value, 3, "0");
@@ -164,7 +192,7 @@ namespace Checker
             {
                 var binary = splitter.binDivisibleChecker(value, "1");
                 var hexa = binOctHex.binary_to_OctalHexa(binary, 4, "1");
-                return hexa;
+                return hexaSignedChecker(hexa);
             }
 
             var uHexa = binOctHex.binary_to_OctalHexa(value, 3, "0");

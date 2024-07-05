@@ -18,13 +18,11 @@ namespace Binary_Calculator_v2
         {
             conversion converts = new conversion();
 
-            //Console.WriteLine(converts.binaryDecimalChecker("101.011"));
-            //Console.WriteLine(converts.decimalBinaryChecker("-2.125"));
+            // Console.WriteLine(converts.binaryDecimalChecker("01101")); // binary to decimal (whole) *check
+            // Console.WriteLine(converts.decimalBinaryChecker("13")); // decimal to binary (whole) *check
+            // Console.WriteLine(converts.binaryDecimalChecker("101011")); // binary to decimal (signed whole) *check
+            Console.WriteLine(converts.decimalBinaryChecker("-13"));
 
-            //Console.WriteLine(converts.binaryOctalChecker("0101101.1011"))
-            //Console.WriteLine(converts.octalBinaryChecker("0751.22"));
-
-            Console.WriteLine(converts.hexaBinaryChecker("BE3F.3"));
         }
     }
 }

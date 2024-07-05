@@ -132,14 +132,23 @@ namespace program_splitter
 
         public string binDivisibleChecker(string value, string sign)
         {
-            var val = new List<string>(value.Split('.'));
-            string binary = val[0];
-
-            while (binary.Length % 4 != 0)
+            if (value.Contains("."))
             {
-                binary = sign + binary;
+                var val = new List<string>(value.Split('.'));
+                string binary = val[0];
+
+                while (binary.Length % 4 != 0)
+                {
+                    binary = sign + binary;
+                }
+                return binary + "." + val[1];
             }
-            return binary + "." + val[1];
+
+            while (value.Length % 4 != 0)
+            {
+                value = sign + value;
+            }
+            return value;
         }
         
 
