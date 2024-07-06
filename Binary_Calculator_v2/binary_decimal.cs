@@ -61,13 +61,16 @@ namespace binary_and_decimal
                 remainder += x.ToString();
             }
 
-            if (fraction == 0) // checking to include fraction or not
+            if (fraction == 0) // check to include fraction or not
             {
                 return remainder;
             }
 
             var fraction_container = new List<decimal>() { };
 
+            // Most floating-point values can't be precisely represented as a finite binary value
+            // I set the range to 8
+            // You can adjust the range of the floating-point for binary
             for (int i = 0; i <= 8; i++)
             {
                 decimal number = (decimal)fraction * 2;

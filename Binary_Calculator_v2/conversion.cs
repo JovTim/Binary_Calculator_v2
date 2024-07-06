@@ -96,7 +96,7 @@ namespace Checker
 
         }
 
-        private string binarySignedChecker(string value, bool sign)
+        public string binarySignedChecker(string value, bool sign)
         {
             if (sign)
             {

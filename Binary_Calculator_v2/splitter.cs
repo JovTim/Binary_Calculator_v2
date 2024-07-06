@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using binary_and_decimal;
 using twos_complement_file;
+using Checker;
 namespace program_splitter
 {
     internal class splitter
@@ -161,6 +162,7 @@ namespace program_splitter
         {
         binary_decimal binary_Decimal = new binary_decimal();
         twos_complement twos_Complement = new twos_complement();
+        conversion conversions = new conversion();
             if (value[0] == '-')
             {
                 string deci = "";
@@ -175,9 +177,9 @@ namespace program_splitter
                 }
                 string x = binary_Decimal.decimal_to_binary(deci);
                 string final = twos_Complement.twosComplement(x);
-                return binDivisibleChecker(final, "1");
+                return conversions.binarySignedChecker(binDivisibleChecker(final, "1"), true);
             }
-            return binDivisibleChecker(binary_Decimal.decimal_to_binary(value), "0");
+            return conversions.binarySignedChecker(binDivisibleChecker(binary_Decimal.decimal_to_binary(value), "0"), false);
         }
         
 

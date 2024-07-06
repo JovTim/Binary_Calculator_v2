@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using program_splitter;
+using Checker;
 
 namespace binary_calculation
 {
