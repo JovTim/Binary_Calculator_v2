@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(binOperation));
             this.label1 = new System.Windows.Forms.Label();
             this.buttonHome2 = new System.Windows.Forms.Button();
             this.operationTextBox = new System.Windows.Forms.TextBox();
@@ -214,6 +215,7 @@
             this.Controls.Add(this.operationTextBox);
             this.Controls.Add(this.buttonHome2);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "binOperation";
             this.Text = "BINARY OPERATION";
             this.ResumeLayout(false);

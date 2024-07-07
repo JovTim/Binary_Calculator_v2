@@ -185,8 +185,11 @@ namespace Checker
             {
                 return "Value Error";
             }
-
-            return binOctHex.octalhex_to_Bin(value, 3);
+            if (value[0].Equals("7"))
+            {
+                return splitter.binDivisibleChecker(binOctHex.octalhex_to_Bin(value, 3), "1");
+            }
+            return splitter.binDivisibleChecker(binOctHex.octalhex_to_Bin(value, 3), "0");
         }
 
         public string binaryHexaChecker(string value)
@@ -213,7 +216,11 @@ namespace Checker
                 return "Value Error";
             }
 
-            return binOctHex.octalhex_to_Bin(value, 4);
+            if (value[0].Equals("F"))
+            {
+                return splitter.binDivisibleChecker(binOctHex.octalhex_to_Bin(value, 4), "1");
+            }
+            return splitter.binDivisibleChecker(binOctHex.octalhex_to_Bin(value, 4), "0");
         }
     }
 }

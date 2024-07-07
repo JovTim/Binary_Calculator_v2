@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.label1 = new System.Windows.Forms.Label();
             this.buttonConversion = new System.Windows.Forms.Button();
             this.buttonOperation = new System.Windows.Forms.Button();
@@ -85,6 +86,7 @@
             this.Controls.Add(this.buttonOperation);
             this.Controls.Add(this.buttonConversion);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "BINARY CALCULATOR";
             this.ResumeLayout(false);
