@@ -5,19 +5,19 @@ using System.Text;
 using System.Threading.Tasks;
 using binary_and_decimal;
 using twos_complement_file;
-using binOctalHexa;
-using binary_calculation;
-using Checker; 
+using System.Windows.Forms;
+using System.Runtime.InteropServices;
 namespace Binary_Calculator_v2
 {
+
     internal class Program
     {
-
+        [STAThread]
         static void Main(string[] args)
         {
-            calculation calculation = new calculation();
-
-            
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new Form1());
 
         }
     }

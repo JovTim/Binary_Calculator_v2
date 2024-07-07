@@ -46,19 +46,31 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="binary_decimal.cs" />
+    <Compile Include="binConversion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="binConversion.Designer.cs">
+      <DependentUpon>binConversion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="binOperation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="binOperation.Designer.cs">
+      <DependentUpon>binOperation.cs</DependentUpon>
+    </Compile>
     <Compile Include="bin_octal_hexa.cs" />
     <Compile Include="calculation.cs" />
     <Compile Include="conversion.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="splitter.cs" />
     <Compile Include="twos_complement.cs" />
-    <Compile Include="UserControl1.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControl1.Designer.cs">
-      <DependentUpon>UserControl1.cs</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -67,8 +79,14 @@
     <Content Include="notes.txt" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="UserControl1.resx">
-      <DependentUpon>UserControl1.cs</DependentUpon>
+    <EmbeddedResource Include="binConversion.resx">
+      <DependentUpon>binConversion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="binOperation.resx">
+      <DependentUpon>binOperation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
