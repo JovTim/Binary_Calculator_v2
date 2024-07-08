@@ -119,5 +119,10 @@ namespace Binary_Calculator_v2
                 operationTextBox.SelectionStart = operationTextBox.Text.Length;
             }
         }
+
+        private void helpOperation_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://docs.google.com/document/d/10qVj4Nv25qskq2hEIIAV0WQeInZpHfd1AXhVR3LyA04/edit?usp=sharing");
+        }
     }
 }

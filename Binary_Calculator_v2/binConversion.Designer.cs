@@ -162,6 +162,7 @@
             // 
             this.helpConversion.AutoSize = true;
             this.helpConversion.Font = new System.Drawing.Font("Impact", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.helpConversion.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
             this.helpConversion.LinkColor = System.Drawing.Color.ForestGreen;
             this.helpConversion.Location = new System.Drawing.Point(385, 7);
             this.helpConversion.Name = "helpConversion";
@@ -169,6 +170,7 @@
             this.helpConversion.TabIndex = 13;
             this.helpConversion.TabStop = true;
             this.helpConversion.Text = "?";
+            this.helpConversion.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.helpConversion_LinkClicked);
             // 
             // binConversion
             // 

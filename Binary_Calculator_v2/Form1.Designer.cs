@@ -1,4 +1,6 @@
-﻿namespace Binary_Calculator_v2
+﻿using Binary_Calculator_v2;
+
+namespace Binary_Calculator_v2
 {
     partial class Form1
     {
@@ -69,6 +71,7 @@
             // 
             this.helpMain.AutoSize = true;
             this.helpMain.Font = new System.Drawing.Font("Impact", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.helpMain.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
             this.helpMain.LinkColor = System.Drawing.Color.ForestGreen;
             this.helpMain.Location = new System.Drawing.Point(359, 0);
             this.helpMain.Name = "helpMain";
@@ -76,6 +79,7 @@
             this.helpMain.TabIndex = 3;
             this.helpMain.TabStop = true;
             this.helpMain.Text = "!";
+            this.helpMain.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.helpMain_LinkClicked);
             // 
             // Form1
             // 

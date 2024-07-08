@@ -17,7 +17,7 @@ namespace Checker
         twos_complement twos_Complement = new twos_complement();
         splitter splitter = new splitter(); 
         bin_octal_hexa binOctHex = new bin_octal_hexa();
-        private bool binaryValueChecker(string value)
+        public bool binaryValueChecker(string value)
         {
             foreach (var i in value)
             {

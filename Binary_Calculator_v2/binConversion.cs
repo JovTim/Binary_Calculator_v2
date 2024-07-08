@@ -113,7 +113,8 @@ namespace Binary_Calculator_v2
             if (!binaryInput.ReadOnly)
             {
                 string inputText = binaryInput.Text;
-                if (inputText == "Value Error")
+                bool errorCheck = conversions.binaryValueChecker(inputText);
+                if (!errorCheck)
                 {
                     errorMsg();
                 }
@@ -180,6 +181,11 @@ namespace Binary_Calculator_v2
             deciInput.Text = string.Empty;
             octalInput.Text = string.Empty;
             hexaInput.Text = string.Empty;
+        }
+
+        private void helpConversion_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://docs.google.com/document/d/1YL7eBYnnG3cD-PVOPoAODGX7qrUiFWmqwudj2HjoPYk/edit?usp=sharing");
         }
     }
 }

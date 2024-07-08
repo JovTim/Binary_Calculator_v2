@@ -70,6 +70,7 @@
             this.operationTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.operationTextBox.Location = new System.Drawing.Point(12, 34);
             this.operationTextBox.Name = "operationTextBox";
+            this.operationTextBox.ReadOnly = true;
             this.operationTextBox.Size = new System.Drawing.Size(426, 41);
             this.operationTextBox.TabIndex = 9;
             this.operationTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -166,6 +167,7 @@
             // 
             this.helpOperation.AutoSize = true;
             this.helpOperation.Font = new System.Drawing.Font("Impact", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.helpOperation.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
             this.helpOperation.LinkColor = System.Drawing.Color.ForestGreen;
             this.helpOperation.Location = new System.Drawing.Point(419, -1);
             this.helpOperation.Name = "helpOperation";
@@ -173,6 +175,7 @@
             this.helpOperation.TabIndex = 18;
             this.helpOperation.TabStop = true;
             this.helpOperation.Text = "?";
+            this.helpOperation.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.helpOperation_LinkClicked);
             // 
             // buttonDot
             // 

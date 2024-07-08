@@ -32,5 +32,12 @@ namespace Binary_Calculator_v2
             binOperation.ShowDialog();
             this.Close();
         }
+
+        private void helpMain_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            ToolTip toolTip = new ToolTip();
+            toolTip.SetToolTip((LinkLabel)sender, "About");
+            System.Diagnostics.Process.Start("https://docs.google.com/document/d/1duJQtTT5Admqme4ptnmh1tJQFGwwXRcIe0WIcJAYrns/edit?usp=sharing");
+        }
     }
 }
