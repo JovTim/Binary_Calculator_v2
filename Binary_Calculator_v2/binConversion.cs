@@ -38,13 +38,9 @@ namespace Binary_Calculator_v2
             conversionError.ShowDialog();
         }
 
-        private string errorCheker(string value)
+        private void errorMsg()
         {
-            if (value == "Value Error")
-            {
-                valueError();
-            }
-            return value;
+            valueError();
         }
 
         private void binaryInput_TextChanged(object sender, EventArgs e)
@@ -117,33 +113,64 @@ namespace Binary_Calculator_v2
             if (!binaryInput.ReadOnly)
             {
                 string inputText = binaryInput.Text;
-                deciInput.Text = conversions.binaryDecimalChecker(inputText);
-                octalInput.Text = conversions.binaryOctalChecker(inputText);
-                hexaInput.Text = conversions.binaryHexaChecker(inputText);
+                if (inputText == "Value Error")
+                {
+                    errorMsg();
+                }
+                else
+                {
+                    deciInput.Text = conversions.binaryDecimalChecker(inputText);
+                    octalInput.Text = conversions.binaryOctalChecker(inputText);
+                    hexaInput.Text = conversions.binaryHexaChecker(inputText);
+                }
             }
             else if (!deciInput.ReadOnly)
             {
                 string inputText = deciInput.Text;
                 string output = conversions.decimalBinaryChecker(inputText);
-                binaryInput.Text = output;
-                octalInput.Text = conversions.binaryOctalChecker(output);
-                hexaInput.Text = conversions.binaryHexaChecker(output);
+                if (output == "Value Error")
+                {
+                    errorMsg();
+                }
+                else
+                {
+                    binaryInput.Text = output;
+                    octalInput.Text = conversions.binaryOctalChecker(output);
+                    hexaInput.Text = conversions.binaryHexaChecker(output);
+                }
+                
             }
             else if (!octalInput.ReadOnly)
             {
                 string inputText = octalInput.Text;
-                string output = errorCheker(conversions.octalBinaryChecker(inputText));
-                binaryInput.Text = output;
-                deciInput.Text = conversions.binaryDecimalChecker(output);
-                hexaInput.Text = conversions.binaryHexaChecker(output);
+                string output = conversions.octalBinaryChecker(inputText);
+                if (output == "Value Error")
+                {
+                    errorMsg();
+                }
+                else
+                {
+                    binaryInput.Text = output;
+                    deciInput.Text = conversions.binaryDecimalChecker(output);
+                    hexaInput.Text = conversions.binaryHexaChecker(output);
+                }
+                
             }
             else if (!hexaInput.ReadOnly)
             {
                 string inputText = hexaInput.Text;
                 string output = conversions.hexaBinaryChecker(inputText);
-                binaryInput.Text = output;
-                deciInput.Text = conversions.binaryDecimalChecker(output);
-                octalInput.Text = conversions.binaryOctalChecker(output);
+                if (output == "Value Error")
+                {
+                    errorMsg();
+                }
+                else
+                {
+                    binaryInput.Text = output;
+                    deciInput.Text = conversions.binaryDecimalChecker(output);
+                    octalInput.Text = conversions.binaryOctalChecker(output);
+                }
+                
             }
         }
 

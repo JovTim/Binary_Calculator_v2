@@ -49,6 +49,16 @@ namespace Checker
             return true;
         }
 
+        public bool ifDecimal(string value)
+        {
+            decimal number;
+            if (decimal.TryParse(value, out number))
+            {
+                return true;
+            }
+            return false;
+        }
+
         private bool ifIntegerOrHexa(string value)
         {
             Dictionary<string, int> hexadecimalValueChecker = new Dictionary<string, int>
@@ -151,6 +161,10 @@ namespace Checker
 
         public string decimalBinaryChecker(string value)
         {
+            if (!ifDecimal(value))
+            {
+                return "Value Error";
+            }
             if (Convert.ToDecimal(value) < 0)
             {
                 var positiveDecimal = 0 - (Convert.ToDecimal(value));
