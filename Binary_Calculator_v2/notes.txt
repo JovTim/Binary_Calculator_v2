@@ -1,3 +1,2 @@
 Things to add and fix:
-- GUI
-- Test all conversion (Nah, Im tired lmfao)
+- error messages

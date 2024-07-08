@@ -32,6 +32,21 @@ namespace Binary_Calculator_v2
             this.Close();
         }
 
+        private void valueError()
+        {
+            conversionError conversionError = new conversionError();
+            conversionError.ShowDialog();
+        }
+
+        private string errorCheker(string value)
+        {
+            if (value == "Value Error")
+            {
+                valueError();
+            }
+            return value;
+        }
+
         private void binaryInput_TextChanged(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(binaryInput.Text))
@@ -114,16 +129,15 @@ namespace Binary_Calculator_v2
                 octalInput.Text = conversions.binaryOctalChecker(output);
                 hexaInput.Text = conversions.binaryHexaChecker(output);
             }
-            else if (!octalInput.ReadOnly) // BUG REPORT: even though a typed an unsigned octal value(671.01), it will still give me a negative output
-                                           // most likely because of the binary
+            else if (!octalInput.ReadOnly)
             {
                 string inputText = octalInput.Text;
-                string output = conversions.octalBinaryChecker(inputText);
+                string output = errorCheker(conversions.octalBinaryChecker(inputText));
                 binaryInput.Text = output;
                 deciInput.Text = conversions.binaryDecimalChecker(output);
                 hexaInput.Text = conversions.binaryHexaChecker(output);
             }
-            else if (!hexaInput.ReadOnly) // BUG REPORT: unsigned value (start the value with 8), negative output
+            else if (!hexaInput.ReadOnly)
             {
                 string inputText = hexaInput.Text;
                 string output = conversions.hexaBinaryChecker(inputText);

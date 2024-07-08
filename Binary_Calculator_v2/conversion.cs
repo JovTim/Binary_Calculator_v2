@@ -185,7 +185,7 @@ namespace Checker
             {
                 return "Value Error";
             }
-            if (value[0].Equals("7"))
+            if (value[0].Equals('7'))
             {
                 return splitter.binDivisibleChecker(binOctHex.octalhex_to_Bin(value, 3), "1");
             }
@@ -216,7 +216,7 @@ namespace Checker
                 return "Value Error";
             }
 
-            if (value[0].Equals("F"))
+            if (value[0].Equals('F'))
             {
                 return splitter.binDivisibleChecker(binOctHex.octalhex_to_Bin(value, 4), "1");
             }

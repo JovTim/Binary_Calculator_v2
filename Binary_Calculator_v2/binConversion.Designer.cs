@@ -188,7 +188,9 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.binaryInput);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "binConversion";
             this.Text = "BINARY CONVERSION";
             this.ResumeLayout(false);

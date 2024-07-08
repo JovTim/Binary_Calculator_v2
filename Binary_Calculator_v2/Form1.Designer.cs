@@ -86,7 +86,9 @@
             this.Controls.Add(this.buttonOperation);
             this.Controls.Add(this.buttonConversion);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "Form1";
             this.Text = "BINARY CALCULATOR";
             this.ResumeLayout(false);

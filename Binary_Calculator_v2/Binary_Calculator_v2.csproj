@@ -61,6 +61,12 @@
     <Compile Include="bin_octal_hexa.cs" />
     <Compile Include="calculation.cs" />
     <Compile Include="conversion.cs" />
+    <Compile Include="conversionError.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="conversionError.Designer.cs">
+      <DependentUpon>conversionError.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,6 +90,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="binOperation.resx">
       <DependentUpon>binOperation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="conversionError.resx">
+      <DependentUpon>conversionError.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

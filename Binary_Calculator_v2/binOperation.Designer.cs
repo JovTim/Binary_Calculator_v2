@@ -215,7 +215,9 @@
             this.Controls.Add(this.operationTextBox);
             this.Controls.Add(this.buttonHome2);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "binOperation";
             this.Text = "BINARY OPERATION";
             this.ResumeLayout(false);
