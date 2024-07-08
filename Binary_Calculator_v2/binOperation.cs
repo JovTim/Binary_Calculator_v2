@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using binary_calculation;
-
+// sample
 namespace Binary_Calculator_v2
 {
     public partial class binOperation : Form
